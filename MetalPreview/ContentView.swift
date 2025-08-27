@@ -1,21 +1,16 @@
-//
-//  ContentView.swift
-//  MetalPreview
-//
-//  Created by dohyeoplim on 8/28/25.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+    @State private var startingTime = Date()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TimelineView(.animation) { timeline in
+            let elapsedTime = startingTime.distance(to: Date())
+            Rectangle()
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .foregroundStyle(.grainGradient(time: elapsedTime))
+                .ignoresSafeArea()
         }
-        .padding()
     }
 }
 
