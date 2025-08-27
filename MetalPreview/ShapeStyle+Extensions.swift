@@ -7,17 +7,21 @@
 
 import SwiftUI
 
-private let tl = Color(hex: "#6E85B7")
-private let tc = Color(hex: "#B4A7D6")
-private let tr = Color(hex: "#4C3A8A")
+private let a = "#DEE791"
+private let b = "#9ECAD6"
+private let c = "#FAF9EE"
 
-private let ml = Color(hex: "#B4A7D6")
-private let mc = Color(hex: "#4C3A8A")
-private let mr = Color(hex: "#6E85B7")
+private let tl = Color(hex: a)
+private let tc = Color(hex: b)
+private let tr = Color(hex: c)
 
-private let bl = Color(hex: "#4C3A8A")
-private let bc = Color(hex: "#6E85B7")
-private let br = Color(hex: "#B4A7D6")
+private let ml = Color(hex: b)
+private let mc = Color(hex: c)
+private let mr = Color(hex: a)
+
+private let bl = Color(hex: c)
+private let bc = Color(hex: a)
+private let br = Color(hex: b)
 
 extension ShapeStyle where Self == AnyShapeStyle {
     static func grainGradient(time: TimeInterval, gridSize: Int = 3) -> Self {
