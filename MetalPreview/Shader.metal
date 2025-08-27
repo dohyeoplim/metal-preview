@@ -35,18 +35,18 @@ int4 getIndices(float2 gridCoords, int2 gridSize, int lastIndex) {
 }
 
 half4 gridInterpolation(float2 coords, device const half4 *colors, float4 gridRange, int2 gridSize, int lastIndex, float time) {
-    float a = (sin(time * 0.4) + sin(time * 0.7)) * 0.25 + 0.5;
-    float b = (sin(time * 0.5) + sin(time * 0.9)) * 0.25 + 0.5;
-    float c = (sin(time * 0.6) + sin(time * 1.1)) * 0.25 + 0.5;
-    float d = (sin(time * 0.7) + sin(time * 1.3)) * 0.25 + 0.5;
+    float a = (sin(time * 0.8) + sin(time * 1.3)) * 0.25 + 0.5;
+    float b = (sin(time * 1.0) + sin(time * 1.7)) * 0.25 + 0.5;
+    float c = (sin(time * 1.5) + sin(time * 2.1)) * 0.25 + 0.5;
+    float d = (sin(time * 1.9) + sin(time * 2.5)) * 0.25 + 0.5;
     
     float y0 = mix(a, b, coords.x);
     float y1 = mix(c, d, coords.x);
     float x0 = mix(a, c, coords.y);
     float x1 = mix(b, d, coords.y);
     
-    coords.x = hermite(0.0, 1.0, 2.5 * x0, 2.5 * x1, coords.x);
-    coords.y = hermite(0.0, 1.0, 2.5 * y0, 2.5 * y1, coords.y);
+    coords.x = hermite(0.0, 1.0, 4.0 * x0, 4.0 * x1, coords.x);
+    coords.y = hermite(0.0, 1.0, 4.0 * y0, 4.0 * y1, coords.y);
     
     float2 gridCoords = coords * gridRange.zw;
     int4 id = getIndices(gridCoords, gridSize, lastIndex);
