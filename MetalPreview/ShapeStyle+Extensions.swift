@@ -24,8 +24,8 @@ private let bc = Color(hex: a)
 private let br = Color(hex: b)
 
 extension ShapeStyle where Self == AnyShapeStyle {
-    static func grainGradient(time: TimeInterval, gridSize: Int = 3) -> Self {
-        return AnyShapeStyle(ShaderLibrary.default.grainGradient(
+    static func gradient(time: TimeInterval, gridSize: Int = 3) -> Self {
+        return AnyShapeStyle(ShaderLibrary.default.gradient(
             .boundingRect,
             .float(3),
             .float(time),

@@ -8,7 +8,7 @@ struct ContentView: View {
             let elapsedTime = startingTime.distance(to: Date())
             Rectangle()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .foregroundStyle(.grainGradient(time: elapsedTime))
+                .foregroundStyle(.gradient(time: elapsedTime))
                 .ignoresSafeArea()
         }
     }
